@@ -7,4 +7,105 @@ block scripts
   script(src='about.bundle.js')
 
 block content
-  h1 Страничка "Обо Мне"  
+  section.hero
+    .hero__links
+      -
+        var socials = [
+          ['github','http://vk.com'],
+          ['github','http://gh.com'],
+          ['github','http://in.com']
+        ]
+      ul.socials
+        each item in socials 
+          li.socials__item
+            a(href=`${item[1]}`).socials__link #{item[1]}
+              +icon(item[0], 'socials__link-icon')
+      
+    a(href="#").hamburger.hero__menu
+
+    .hero__title
+      .section-title
+        img(src="", alt="").section-title__pic
+      
+      .user.hero__user
+        .user__pic
+          img(src="", alt="").iser__pic-img
+        .user__description
+          .user__name Щербаков
+          .user__info Сайт Сайт
+
+    .hero__down-btns
+      a(href="#").down-btn
+
+  section.about
+    .about__left
+      .about__triangle
+        svg.triangle.triangle_fill_white
+      .about__left-title
+        .block-title Обо мне
+      .about__left-content
+        .user-description
+          .user-description__image
+            img(src="", alt="").user-description__avatar
+          .user-description__date
+            .user-description__title
+              .block-subtitle Кто   я__
+            .user-description__text.text-content
+              p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis quia, autem explicabo temporibus tenetur modi obcaecati earum provident illo natus quibusdam est, praesentium placeat deserunt, dolore mollitia eum. Quisquam, fuga!
+              p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis quia, autem explicabo temporibus tenetur modi obcaecati earum provident illo natus quibusdam est, praesentium placeat deserunt, dolore mollitia eum. Quisquam, fuga!
+    .about__right
+      .about__triangle
+        svg.triangle.triangle_fill_beige
+      .about__right-title
+        .block-subtitle Чем я могу быть вам полезен2
+      .about__right-description.text-content
+        p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto quod minima provident asperiores vero totam voluptates maiores error impedit pariatur ullam praesentium tenetur amet accusantium sit animi explicabo, hic quisquam.
+      .about__right-content
+        -
+          var skills = [
+            ['FrontEnd',[['html',10],['css',30],['js',70]]],
+            ['BackEnd',[['html',30],['css',30],['jsjs',70]]],
+            ['WorkFlow',[['html',55],['css',30],['jsjsjsjs',70]]],
+          ]
+        ul.skills-list
+          each skillrow in skills
+            //- console.log(skillrow[1][0])
+            li.skills-list__item.skills-row
+              .skills-row__title #{skillrow[0]}
+              ul.skills-row__list
+                each skill in skillrow[1]
+                  li.skill-row__item
+                    svg.skill
+                    .skill__title #{skill[0]}
+  section.map
+    .google-map
+    .map__data
+      .contacts
+        h2.contacts__title
+          .block-subtitle Контакты232
+        address.contact__data
+          ul.contacts__list
+            -
+              var contacts = [
+                ['skype','stil_82'],
+                ['icq','268151418'],
+                ['phone','8-903-272-1111']
+              ]
+            each contact in contacts
+              li.contacts__item.contacts-row
+                .contacts-row.contacts__icon
+                  +icon(`${contact[0]}`, 'contacts__item-icon')
+                .contacts-row.contacts__title #{contact[1]}
+  footer.footer
+    .footer__row
+      .footer__col
+        nav.menu
+          ul.menu__list
+            each item in ['Мои работы','Блог','Обо мне','Авторизация']
+              li.menu__item
+                a(href="#").menu__link #{item}
+      .footer__col.footer__col_justify_end
+    .footer__row
+      .footer__col
+      .footer__col.footer__col_justify_end
+    
