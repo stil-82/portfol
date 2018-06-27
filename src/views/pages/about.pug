@@ -16,8 +16,9 @@ block content
           ['check','http://in.com']
         ]
       +socials(socials,'socials_common')
-      
-    a(href="#").hamburger.hero__menu
+
+      a(href="#").hamburger.hero__menu
+        +icon('hamburger', 'hamburger__link-icon')
 
     .hero__title
       .section-title
@@ -27,8 +28,8 @@ block content
         .user__pic
           img(src="", alt="").iser__pic-img
         .user__description
-          .user__name Щербаков ИИИИ
-          .user__info Сайт Сайт
+          .user__name Иван Щербаков
+          .user__info Личный сайт веб разработчика
 
     .hero__down-btns
       a(href="#").down-btn
@@ -45,7 +46,7 @@ block content
             img(src="", alt="").user-description__avatar
           .user-description__date
             .user-description__title
-              .block-subtitle Кто   я__
+              .block-subtitle Кто я
             .user-description__text.text-content
               p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis quia, autem explicabo temporibus tenetur modi obcaecati earum provident illo natus quibusdam est, praesentium placeat deserunt, dolore mollitia eum. Quisquam, fuga!
               p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis quia, autem explicabo temporibus tenetur modi obcaecati earum provident illo natus quibusdam est, praesentium placeat deserunt, dolore mollitia eum. Quisquam, fuga!
@@ -53,15 +54,15 @@ block content
       .about__triangle
         svg.triangle.triangle_fill_beige
       .about__right-title
-        .block-subtitle Чем я могу быть вам полезен2
+        .block-subtitle Чем я могу быть вам полезен
       .about__right-description.text-content
         p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto quod minima provident asperiores vero totam voluptates maiores error impedit pariatur ullam praesentium tenetur amet accusantium sit animi explicabo, hic quisquam.
       .about__right-content
         -
           var skills = [
-            ['FrontEnd',[['html',10],['css',30],['js',70]]],
-            ['BackEnd',[['html',30],['css',30],['jsjs',70]]],
-            ['WorkFlow',[['html',55],['css',30],['jsjsjsjs',70]]],
+            ['FrontEnd',[['html5',10],['css3',30],['javaScript & jQuery',70]]],
+            ['BackEnd',[['php',30],['mySql',30],['Node.js & npm',70],['mongoDB',35]]],
+            ['WorkFlow',[['git',55],['gulp',30],['Bower',70]]],
           ]
         ul.skills-list
           each skillrow in skills
@@ -73,8 +74,8 @@ block content
                   li.skill-row__item
                     figure.skill
                       svg(viewBox="0 0 100 100" preserveAspectRatio="none").skill__figure
-                        circle(cx="50" cy="50" r="40").skill__circle.skill__circle_under
-                        circle(cx="50" cy="50" r="40").skill__circle.skill__circle_above
+                        circle(cx="50" cy="50" r="50").skill__circle.skill__circle_under
+                        circle(cx="50" cy="50" r="25").skill__circle.skill__circle_above
                       .skill__title #{skill[0]}
   section.map
     .google-map

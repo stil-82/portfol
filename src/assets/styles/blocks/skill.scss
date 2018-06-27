@@ -1,8 +1,18 @@
+.skills-list{
+    display:flex;
+    flex-direction: column;
+}
+
+.skills-row__list{
+    display:flex;
+    //flex-direction: column;
+}
+
 .skill {
     display: block;
     position: relative;
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
 }
 
 .skill__figure {
@@ -11,7 +21,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    transform: rotate(-90deg);
+    transform: rotate(90deg);
 }
 
 .skill__circle {
@@ -21,6 +31,6 @@
 
 .skill__circle_above {
     stroke: $green;
-    stroke-dasharray: 251;
+    stroke-dasharray: 181;
     stroke-dashoffset: 30;
 }
