@@ -15,11 +15,7 @@ block content
           ['envelope','http://gh.com'],
           ['check','http://in.com']
         ]
-      ul.socials
-        each item in socials 
-          li.socials__item
-            a(href=`${item[1]}`).socials__link #{item[1]}
-              +icon(item[0], 'socials__link-icon')
+      +socials(socials,'socials_common')
       
     a(href="#").hamburger.hero__menu
 
@@ -75,14 +71,17 @@ block content
               ul.skills-row__list
                 each skill in skillrow[1]
                   li.skill-row__item
-                    svg.skill
-                    .skill__title #{skill[0]}
+                    figure.skill
+                      svg(viewBox="0 0 100 100" preserveAspectRatio="none").skill__figure
+                        circle(cx="50" cy="50" r="4").skill__circle.skill__circle_under
+                        circle(cx="50" cy="50" r="4").skill__circle.skill__circle_above
+                      .skill__title #{skill[0]}
   section.map
     .google-map
     .map__data
       .contacts
         h2.contacts__title
-          .block-subtitle Контакты111
+          .block-subtitle Контакты
         address.contact__data
           ul.contacts__list
             -
@@ -105,6 +104,7 @@ block content
               li.menu__item
                 a(href="#").menu__link #{item}
       .footer__col.footer__col_justify_end
+        +socials(socials,'socials_round')
     .footer__row
       .footer__col
         .footer__text
