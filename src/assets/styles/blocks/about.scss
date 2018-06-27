@@ -1,0 +1,19 @@
+    .footer {
+        display: flex;
+        background-color: yellow;
+        background-color: pink;
+        height: 150px;
+    }
+
+  .footer__row {
+      display: flex;
+      align-items: center;
+
+      &:nth-child(1) {
+          margin-left: auto;
+      }
+  }
+
+  .footer__col{
+      display: flex;
+  }
